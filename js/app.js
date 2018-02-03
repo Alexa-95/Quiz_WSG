@@ -596,7 +596,7 @@ $(function() {
         
     } else{
       if(quiz.descriptions !== 1){   
-          //no i to kurwa nie działa -_-"
+          //No i tu nie działa (ノಠ益ಠ)ノ彡┻━┻
 
       }else{
         showResults();
