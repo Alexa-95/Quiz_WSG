@@ -311,7 +311,7 @@ $(function() {
               result: "2"
             },
             {
-              answer: "Odkrycie leku na rana o 100% skuteczności",
+              answer: "Odkrycie leku na raka o 100% skuteczności",
               result: "3"
             },
             {
@@ -405,7 +405,7 @@ $(function() {
         "Zostań inżynierem - Studia przygotują Cię z zakresu metod projektowania, nauczą pracy w zespole, ergonomii pracy oraz wspomagania komputerowego. Umożliwią praktyczne poznanie najnowszych technologii oraz obszarów ich zastosowań, w bezpośrednim kontakcie z ich producentami i dostawcami.",
         "Dołącz do humanistów - Studia dla osób o wysokich kompetencjach komunikacyjnych i wrażliwości społecznej, zorientowanych na pracę z ludźmi i dla ludzi. Oparte o zapotrzebowanie rynku pracy na wykwalifikowanych praktyków z zakresu nauk społecznych.",
         "Dołącz do menedżerów - Ofertę edukacyjną dla Ciebie współtworzą ekonomiści, liderzy regionalnej przedsiębiorczości oraz instytucje wspierające biznes, wskazując te obszary rynku, na które jest największe zapotrzebowanie na specjalistów z określonych dziedzin.",
-        "Buduj i projektuj - Oferta kierowana jest do osób kreatywnych z wyobraźnią. Podejmując studia na tych obszarach zyskujesz praktyczne kształcenie w zakresie m.in. kształtowania przestrzeni i krajobrazu, technologii budowlanych i materiałoznawstwa, projektowania wnętrz i designu.",
+        "Buduj i praktycznerojektuj - Oferta kierowana jest do osób kreatywnych z wyobraźnią. Podejmując studia na tych obszarach zyskujesz praktyczne kształcenie w zakresie m.in. kształtowania przestrzeni i krajobrazu, technologii budowlanych i materiałoznawstwa, projektowania wnętrz i designu.",
         "Działaj w sektorze medycznym - Wybierz studia z pasją, poparte wyselekcjonowaną i praktyczną wiedzą umożliwiającą odnalezienie zupełnie nowych i pożądanych przez pracodawców obszarów zatrudnienia w działalności medycznej, sportowej czy rekreacyjnej.",
         "Pracuj w branży kreatywnej - Kompetencje uzyskane podczas toku nauki uczynią z Ciebie preferowanego kandydata do pracy w dynamicznie rozwijających się firmach i spółkach z kapitałem zagranicznym, ale też w środkach masowego przekazu, centrach finansowych, firmach transportowych, doradztwie czy fundacjach.",
       "Ta sama liczba odpowiedzi"
@@ -427,8 +427,37 @@ $(function() {
     var quiz = personalityQuiz;
     var questions = quiz.questions;
     var questionSet = questions.length;
+    var waga = [
+      {
+        count: 0,
+        weight: 0
+      },
+      {
+        count: 0,
+        weight: 0
+      },
+      {
+        count: 0,
+        weight: 0
+      },
+      {
+        count: 0,
+        weight: 0
+      },
+      {
+        count: 0,
+        weight: 0
+      },
+      {
+        count: 0,
+        weight: 0
+      },
+      {
+        count: 0,
+        weight: 0
+      }
+    ];
     var collectedAnswers = []; //this is the array where the answers are stored, then counted and depending on the occurence of each, result is established
-    var newAnswers = collectedAnswers;
     var startingBtn = $("#start");
     // first initiate the quiz
     startingBtn.on("click", function(event) {
@@ -449,6 +478,7 @@ $(function() {
     function createQuestion() {
       if (index < questionSet) {
         var answers = questions[index].answers;
+        // console.log(answers);
         randomize(answers);
   
         var title = $("<h5>", {
@@ -504,49 +534,38 @@ $(function() {
         class: "resultsParagraph"
       });
       resultsParagraph.appendTo(resultsBoard);
-      var result0 = collectedAnswers.filter(function(item) {
-        return item === quiz.results[0];
-      }).length;
-      var result1 = collectedAnswers.filter(function(item) {
-        return item === quiz.results[1];
-      }).length;
-      var result2 = collectedAnswers.filter(function(item) {
-        return item === quiz.results[2];
-      }).length;
-      var result3 = collectedAnswers.filter(function(item) {
-        return item === quiz.results[3];
-      }).length;
-      var result4 = collectedAnswers.filter(function(item) {
-        return item === quiz.results[4];
-      }).length;
-      var result5 = collectedAnswers.filter(function(item) {
-        return item === quiz.results[5];
-      }).length;
-      var result6 = collectedAnswers.filter(function(item) {
-        return item === quiz.results[6];
-      }).length;
-      var result7 = collectedAnswers.filter(function(item) {
-        return item === quiz.results[7];
-      }).length;
-  
-      if (result0 > result1 && result0 > result2 && result0 > result3 && result0 > result4 && result0 > result5 && result0 > result6) {
-        resultsParagraph.text(quiz.descriptions[0]);
-      } else if (result1 > result0 && result1 > result2 && result1 > result3 && result1 > result4 && result1 > result5 && result1 > result6) {
-        resultsParagraph.text(quiz.descriptions[1]);
-      } else if (result2 > result0 && result2 > result1 && result2 > result3 && result2 > result4 && result2 > result5 && result2 > result6) {
-        resultsParagraph.text(quiz.descriptions[2]);
-      } else if (result3 > result0 && result3 > result1 && result3 > result2 && result3 > result4 && result3 > result5 && result3 > result6) {
-        resultsParagraph.text(quiz.descriptions[3]);
-      } else if (result4 > result0 && result4 > result1 && result4 > result2 && result4 > result3 && result4 > result5 && result4 > result6) {
-        resultsParagraph.text(quiz.descriptions[4]);
-      } else if (result5 > result0 && result5 > result1 && result5 > result2 && result5 > result3 && result5 > result4 && result5 > result6) {
-        resultsParagraph.text(quiz.descriptions[5]);
-      } else if (result6 > result0 && result6 > result1 && result6 > result2 && result6 > result3 && result6 > result4 && result6 > result5) {
-        resultsParagraph.text(quiz.descriptions[6]);
-      } 
+
+      max = 0;
+      count = 0;
+      for (var i = 0; i < 7; i++) {
+        if (waga[i].count > max) {
+          max = waga[i].count;
+          count = 1;
+        } else if (waga[i].count === max) {
+          count++;
+        }
+      }
+      if (count === 1) {
+        for (var i = 0; i < 7; i++) {
+          if (waga[i].count === max) {
+            resultsParagraph.text(quiz.descriptions[i]);  
+            break;
+          }
+        }
+      } else {
+        maxWeight = 0;
+        for (var i = 0; i < 7; i++) {
+          if (waga[i].count === max && waga[i].weight > maxWeight) {
+            maxWeight = waga[i].weight;
+          }
+        }
+        for (var i = 0; i < 7; i++) {
+          if (waga[i].weight === maxWeight) {
+            resultsParagraph.text(quiz.descriptions[i]);
+          }
+        }
+      }
     }
-  
-  
   
   //if you do not choose an answer- alert is shown and the quiz is halted
     function createAlertBox(element) {
@@ -568,10 +587,11 @@ $(function() {
     //test starts
     $("body").on("click", ".startTest", function() {
       $(this).remove();
-      randomize(questions);
+      //randomize(questions);
       createQuestion();
     });
   
+  WEIGHT = 1;
     $("body").on("click", ".quizButton", function() {
       var labels = $(this).siblings("label");
       //console.log(labels);
@@ -586,24 +606,19 @@ $(function() {
           createAlertBox($("#testBoard"));
         } else {
           index++;
+          waga[dataText - 1].count++;
+          waga[dataText - 1].weight += WEIGHT;
+          WEIGHT *= 2;
+          console.log(waga);
           collectedAnswers.push(dataText);
-          console.log(collectedAnswers, collectedAnswers.length);
           createQuestion();
           $(this).parent().hide();
           $(this).parent().prev().hide();
         }
         //once the questions are all answered, the results are generated
           
-      } else{
-        if(quiz.descriptions !== 1){   
-            //No i tu nie działa (ノಠ益ಠ)ノ彡┻━┻
-  
-        }else{
-          showResults();
-          }
-  
-      
-  
+      } else {
+        showResults();
       }
     });
   
