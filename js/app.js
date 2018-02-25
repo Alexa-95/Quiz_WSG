@@ -402,13 +402,12 @@ $(function() {
       results: ["1", "2", "3", "4", "5", "6", "7"],
       descriptions: [
         "Studiuj turystykę - Podstawowym założeniem programu nauczania naszej uczelni jest odejście od kształcenia teoretycznego i położenie wyraźnego nacisku na wiedzę specjalistyczną, przygotowującą Cię do podjęcia zatrudnienia w sektorze usług turystycznych.",
-        "Zostań inżynierem - Studia przygotują Cię z zakresu metod projektowania, nauczą pracy w zespole, ergonomii pracy oraz wspomagania komputerowego. Umożliwią praktyczne poznanie najnowszych technologii oraz obszarów ich zastosowań, w bezpośrednim kontakcie z ich producentami i dostawcami.",
-        "Dołącz do humanistów - Studia dla osób o wysokich kompetencjach komunikacyjnych i wrażliwości społecznej, zorientowanych na pracę z ludźmi i dla ludzi. Oparte o zapotrzebowanie rynku pracy na wykwalifikowanych praktyków z zakresu nauk społecznych.",
-        "Dołącz do menedżerów - Ofertę edukacyjną dla Ciebie współtworzą ekonomiści, liderzy regionalnej przedsiębiorczości oraz instytucje wspierające biznes, wskazując te obszary rynku, na które jest największe zapotrzebowanie na specjalistów z określonych dziedzin.",
-        "Buduj i praktycznerojektuj - Oferta kierowana jest do osób kreatywnych z wyobraźnią. Podejmując studia na tych obszarach zyskujesz praktyczne kształcenie w zakresie m.in. kształtowania przestrzeni i krajobrazu, technologii budowlanych i materiałoznawstwa, projektowania wnętrz i designu.",
-        "Działaj w sektorze medycznym - Wybierz studia z pasją, poparte wyselekcjonowaną i praktyczną wiedzą umożliwiającą odnalezienie zupełnie nowych i pożądanych przez pracodawców obszarów zatrudnienia w działalności medycznej, sportowej czy rekreacyjnej.",
-        "Pracuj w branży kreatywnej - Kompetencje uzyskane podczas toku nauki uczynią z Ciebie preferowanego kandydata do pracy w dynamicznie rozwijających się firmach i spółkach z kapitałem zagranicznym, ale też w środkach masowego przekazu, centrach finansowych, firmach transportowych, doradztwie czy fundacjach.",
-      "Ta sama liczba odpowiedzi"
+      "Zostań inżynierem - Studia przygotują Cię z zakresu metod projektowania, nauczą pracy w zespole, ergonomii pracy oraz wspomagania komputerowego. Umożliwią praktyczne poznanie najnowszych technologii oraz obszarów ich zastosowań, w bezpośrednim kontakcie z ich producentami i dostawcami.",
+      "Dołącz do humanistów - Studia dla osób o wysokich kompetencjach komunikacyjnych i wrażliwości społecznej, zorientowanych na pracę z ludźmi i dla ludzi. Oparte o zapotrzebowanie rynku pracy na wykwalifikowanych praktyków z zakresu nauk społecznych.",
+      "Dołącz do menedżerów - Ofertę edukacyjną dla Ciebie współtworzą ekonomiści, liderzy regionalnej przedsiębiorczości oraz instytucje wspierające biznes, wskazując te obszary rynku, na które jest największe zapotrzebowanie na specjalistów z określonych dziedzin.",
+      "Buduj i projektuj - Oferta kierowana jest do osób kreatywnych z wyobraźnią. Podejmując studia na tych obszarach zyskujesz praktyczne kształcenie w zakresie m.in. kształtowania przestrzeni i krajobrazu, technologii budowlanych i materiałoznawstwa, projektowania wnętrz i designu.",
+      "Działaj w sektorze medycznym - Wybierz studia z pasją, poparte wyselekcjonowaną i praktyczną wiedzą umożliwiającą odnalezienie zupełnie nowych i pożądanych przez pracodawców obszarów zatrudnienia w działalności medycznej, sportowej czy rekreacyjnej.",
+      "Pracuj w branży kreatywnej - Kompetencje uzyskane podczas toku nauki uczynią z Ciebie preferowanego kandydata do pracy w dynamicznie rozwijających się firmach i spółkach z kapitałem zagranicznym, ale też w środkach masowego przekazu, centrach finansowych, firmach transportowych, doradztwie czy fundacjach."
       ]
     };
   
